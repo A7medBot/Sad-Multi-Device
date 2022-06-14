@@ -14,8 +14,8 @@ let format = sizeFormatter({
   render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
-    let date = moment.tz('Asia/Jakarta').format("dddd, Do MMMM, YYYY")
-    let time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+    let date = moment.tz('Asia/Baghdad').format("dddd, Do MMMM, YYYY")
+    let time = moment.tz('Asia/Baghdad').format('HH:mm:ss')
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
@@ -61,7 +61,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 📈 ᴅᴀᴛᴀʙᴀsᴇ: ${totalreg}
 
 📅 ᴅᴀᴛᴇ: ${date}
-⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +7:00﹚
+⌚ ᴛɪᴍᴇ: ${time} ﹙ɢᴍᴛ +3:00﹚
 
 💻 sᴇʀᴠᴇʀ ɪɴғᴏ :
 ⮕ ᴩɪɴɢ: ${speed} ᴍs
@@ -73,7 +73,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, command }) => {
 ⮕ ${groupsIn.length - groupsIn.length} - Groups Left
 ⮕ ${chats.length - groupsIn.length} - Personal Chats
 ⮕ ${chats.length} - Total Chats
-`.trim(), './media/botinfo.jpg', 'https://github.com/FahriAdison/Sad-Multi-Device', 'ʙᴏᴛ sᴄʀɪᴩᴛ', null, null, [
+`.trim(), './media/botinfo.jpg', 'https://instagram.com/lhjj_56?igshid=YmMyMTA2M2Y=', 'ʙᴏᴛ sᴄʀɪᴩᴛ', null, null, [
 [`ᴏᴡɴᴇʀ`, `${usedPrefix}owner`],
 [`ᴅᴏɴᴀᴛᴇ`, `${usedPrefix}donate`]
 ], m, {asLocation: true})
