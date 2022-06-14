@@ -5,7 +5,7 @@ public class Main {
         //frame 
 
         Jframe frame = new Jframe(); //framenya
-        frame.setTittle("Papah-Chan");
+        frame.setTittle("AĦMED ALHUJAJ");
         frame.setDefaultCloseOperation(Jframe.EXIT_ON_CLOSE); //tombol close
         frame.setResizeble(false); //:v
         frame.setSize(200,200);
