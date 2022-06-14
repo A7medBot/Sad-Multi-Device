@@ -126,8 +126,8 @@
                 errors: [],
                 output: '',
                 url: {
-                    sms: 'https://amfcode.my.id/api/spamsms?phone=',
-                    call: 'https://id.jagreward.com/member/verify-mobile/'
+                    //sms: 'https://amfcode.my.id/api/spamsms?phone=',
+                    //call: 'https://id.jagreward.com/member/verify-mobile/'
                 },
                 headers: {
                     'Host': 'id.jagreward.com',
@@ -166,28 +166,28 @@
                 this.output = ''
                 this.errors = []
 
-                if (this.form.no_hp && this.form.jumlah || this.form.delay) {
-                    switch(this.type) {
-                        case 'sms':
-                            if (!!this.withDelay) {
-                                for (i = 0; i < this.form.jumlah; i++) {
-                                    await this.delay_(+this.form.delay)
-                                    this.sms()
-                                }
-                            }
-                            this.sms()
-                            break;
-                        case 'call':
-                            if (!!this.withDelay) {
-                                for (i = 0; i < this.form.jumlah; i++) {
-                                    await this.delay_(+this.form.delay)
-                                    this.call()
-                                }
-                            }
-                            this.call()
-                            break;
-                        default:
-                            break       
+                //if (this.form.no_hp && this.form.jumlah || this.form.delay) {
+                 //   switch(this.type) {
+                   //     case 'sms':
+                     //       if (!!this.withDelay) {
+                       //         for (i = 0; i < this.form.jumlah; i++) {
+                         //           await this.delay_(+this.form.delay)
+                           //         this.sms()
+                            //    }
+                            //}
+                            //this.sms()
+                            //break;
+                       // case 'call':
+                         //   if (!!this.withDelay) {
+                           //     for (i = 0; i < this.form.jumlah; i++) {
+                             //       await this.delay_(+this.form.delay)
+                               //     this.call()
+                                //}
+                       //     }
+                         //   this.call()
+                           // break;
+                        //default:
+                          //  break       
                     }
                 }
 
@@ -198,20 +198,20 @@
                     }
                 })
             },
-            sms() {
-                axios.get(this.url.sms + this.form.no_hp)
-                    .then(({ data }) => {
-                        console.log(data)
-                    }).catch( e => console.error)
-            },
-            call() {
-                axios.post(this.url.call + this.form.no_hp, {
-                    method: "CALL",
-                    countryCode: "id",
-                }, { headers: {...this.headers} })
-                    .then(({ data }) => {
-                        console.log(data)
-                    }).catch( e => console.error)
+        //    sms() {
+          //      axios.get(this.url.sms + this.form.no_hp)
+            //        .then(({ data }) => {
+              //          console.log(data)
+                //    }).catch( e => console.error)
+      //      },
+        //    call() {
+          //      axios.post(this.url.call + this.form.no_hp, {
+            //        method: "CALL",
+              //      countryCode: "id",
+//                }, { headers: {...this.headers} })
+  //                  .then(({ data }) => {
+    //                    console.log(data)
+      //              }).catch( e => console.error)
             },
             delay_(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms))
