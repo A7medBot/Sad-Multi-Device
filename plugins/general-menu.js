@@ -27,9 +27,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone: 'Asia/Jakarta'
+      timeZone: 'Asia/Baghdad'
     })
-    let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Jakarta' })
+    let time = d.toLocaleTimeString(locale, { timeZone: 'Asia/Baghdad' })
     time = time.replace(/[.]/g, ':')
     let _uptime
     if (process.send) {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
         setTimeout(resolve, 1000)
       }) * 1000
     }
-      let vn = './media/tante-tante.mp3'
+     // let vn = './media/tante-tante.mp3'
     let uptime = clockString(_uptime)
     let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
       return {
@@ -86,7 +86,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       name, date, time,
       readmore: readMore
     }
-    let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+    let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '9647717555198@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     // const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
     // if (m.isGroup) return conn.sendButton(m.chat, text.trim(), conn.getName(conn.user.jid), pp, [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], m)
@@ -95,8 +95,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
    conn.sendButton(m.chat, `*${wish()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['Speedtest', _p + 'ping'], ['Owner', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
 mediaType: 'VIDEO',
 mediaUrl: 'https://www.kibrispdr.org/dwn/7/yotsuba-nakano-wallpaper.jpg',
-title: 'Simple Bot Esm',
-body: 'By Papah-Chan',
+title: 'POTATO',
+body: 'By AĦMED ALHUJAJ',
 thumbnail: fs.readFileSync("./thumbnail.jpg"),
 sourceUrl: 'https://youtu.be/poD-7_U3jXk'
 }
